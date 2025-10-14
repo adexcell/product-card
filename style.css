@@ -10,25 +10,31 @@
     color: #515076;
 }
 
-.header-1 {
+.title {
     font-size: 70px;
     line-height: 78px;
     text-align: center;
     margin-top: 220px;
 }
 
-body {
+.background-image-flowers {
+    width: 790px;
+    height: 697px;
     background-image: url("src/images/bg-flowers.png");
-    background-size: 60%;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: 85px 0%;
+    z-index: -1;
+    position: fixed;
+    top: 0px;
+    left: 85px;
 }
 
 .cards-list-container {
     margin: 110px 85px 116px 85px;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 45px;
 }
 
@@ -69,7 +75,9 @@ body {
 }
 
 .product-price {
-    margin-top: 25px
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .price-text {
@@ -78,8 +86,7 @@ body {
     line-height: 24px;
 }
 
-.price-digit {
+.price-value {
     font-size: 20px;
     line-height: 24px;
-    float: right;
 }
