@@ -20,7 +20,6 @@
     padding-top: 220px;
     margin: auto;
     width: 1110px;
-    min-height: 100vh;
     background-image: url("src/images/bg-flowers.png");
     background-size: 790px;
     background-repeat: no-repeat;
@@ -89,4 +88,20 @@
 .price-value {
     font-size: 20px;
     line-height: 24px;
+}
+
+.button {
+    font-size: 20px;
+    border-width: 1px;
+    border-color: #A5A3B9;
+    border-radius: 4px;
+    /* background-color: #F7F7FA; */
+    height: 50px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+}
+
+.button-new-color {
+    background-color: aquamarine;
 }
