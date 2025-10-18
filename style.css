@@ -14,28 +14,27 @@
     font-size: 70px;
     line-height: 78px;
     text-align: center;
-    margin-top: 220px;
 }
 
-.background-image-flowers {
-    width: 790px;
-    height: 697px;
+.catalog {
+    padding-top: 220px;
+    margin: auto;
+    width: 1110px;
     background-image: url("src/images/bg-flowers.png");
-    background-size: 100%;
+    background-size: 790px;
     background-repeat: no-repeat;
-    background-position: 85px 0%;
-    z-index: -1;
-    position: fixed;
-    top: 0px;
-    left: 85px;
+    background-position: 0px 0px;
+    position: relative;
+    z-index: 0;
 }
 
 .cards-list-container {
-    margin: 110px 85px 116px 85px;
+    margin-top: 110px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 45px;
+    
 }
 
 .card-container {
@@ -89,4 +88,19 @@
 .price-value {
     font-size: 20px;
     line-height: 24px;
+}
+
+.button {
+    font-size: 20px;
+    border-width: 1px;
+    border-color: #A5A3B9;
+    border-radius: 4px;
+    height: 50px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+}
+
+.button-new-color {
+    background-color: aquamarine;
 }
