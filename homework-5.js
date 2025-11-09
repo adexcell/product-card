@@ -18,9 +18,9 @@ showTemperature("Moscow", 10)
 скорости звука — выводим лог "Сверхзвуковая скорость", если ниже —
 "Дозвуковая скорость"? если равна — "Скорость звука"
 */
-const speedOfSound = 343
+const SPEED_OF_SOUND = 343
 
-const isSpeedofSound = speed => {
+const compareWithSpeedOfSound = speed => {
     if (speed > speedOfSound) {
         console.log("Сверхзвуковая скорость")
     } else if (speed === speedOfSound) {
@@ -42,11 +42,9 @@ const isSpeedofSound = speed => {
 const product = "milk"
 const price = "100"
 
-const makePurchase = cash => {
-    const trueCondition = `${product} приобретён. Спасибо за покупку!`
-    const falseCondition = `Вам не хватает ${price - cash}, пополните баланс`
-    const check = cash > price ? trueCondition : falseCondition
-    console.log(check)
+const makePurchase = cash => { 
+    console.log((cash > price ? `${product} приобретён. Спасибо за покупку!` 
+        : `Вам не хватает ${price - cash}, пополните баланс`))
 }
 makePurchase(50)
 
@@ -65,5 +63,5 @@ function square(number) {
 усмотрению
 */
 const student = "Student"
-let date = "today"
-var task = 7
+let dayOfTheWeek = "Monday"
+var taskNumber = 7
