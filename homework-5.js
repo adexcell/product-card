@@ -18,7 +18,7 @@ showTemperature("Moscow", 10)
 скорости звука — выводим лог "Сверхзвуковая скорость", если ниже —
 "Дозвуковая скорость"? если равна — "Скорость звука"
 */
-const SPEED_OF_SOUND = 343
+const SPEED_OF_SOUND = 343;
 
 const compareWithSpeedOfSound = speed => {
     if (speed > speedOfSound) {
@@ -39,12 +39,13 @@ const compareWithSpeedOfSound = speed => {
 "(ваше название товара) приобретён. Спасибо за покупку!", если нет -
 обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс". 
 */
-const product = "milk"
-const price = "100"
+const product = "milk";
+const price = "100";
 
-const makePurchase = cash => { 
-    console.log((cash > price ? `${product} приобретён. Спасибо за покупку!` 
-        : `Вам не хватает ${price - cash}, пополните баланс`))
+const makePurchase = cash => {
+    const successMessage = `${product} приобретён. Спасибо за покупку!`
+    const errorMessage = `Вам не хватает ${price - cash}, пополните баланс`
+    console.log(cash > price ? successMessage : errorMessage)
 }
 makePurchase(50)
 
@@ -62,6 +63,6 @@ function square(number) {
 7. Создать 3 переменных (без разницы каких) и именовать их по своему 
 усмотрению
 */
-const student = "Student"
-let dayOfTheWeek = "Monday"
-var taskNumber = 7
+const student = "Student";
+let dayOfTheWeek = "Monday";
+var taskNumber = 7;
