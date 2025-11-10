@@ -25,14 +25,14 @@ const car = {
     transmission: "Automatic",
 }
 
-car["owner"] = student
+car.owner = student
 console.log(car)
 
 // 5. Написать функцию которая аргументом будет принимать объект, описанный в пункте №4.
 // Она проверяет, есть ли в объекте свойство "максимальная скорость",
 // если нет - добавляет его и задает значение, если есть - прекращает выполнение (ничего не делает)
 
-const hasMaxSpeed = obj => {
+const setMaxSpeed = obj => {
     if ('maxSpeed' in obj) {
         return
     } else {
@@ -40,7 +40,7 @@ const hasMaxSpeed = obj => {
     }
 }
 
-hasMaxSpeed(car)
+setMaxSpeed(car)
 console.log(car)
 
 // 6. Написать функцию, которая получает первым аргументом  — объект, а вторым аргументом — свойство объекта,
@@ -104,7 +104,7 @@ const anotherBook = [
     },
 ]
 
-books.push(...anotherBook)
+books.push(anotherBook)
 
 // 9. Создать еще один массив, состоящих из тех же книг, но относящийся к определенной вселенной
 // (Гарри Поттер, Марвел и так далее). (Если используете другую, свою сущность - импровизируйте).
@@ -157,15 +157,15 @@ const allBooks = [...books, ...moreBooks]
 // Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true (да, это редкий),
 // нет - false (значит это не редкий).
 
-const addProperty = array => {
+const markRareBooks = array => {
     array.forEach(obj => {
         if (obj.year > 2000) {
-            obj["isRare"] = true
+            obj.isRare = true
         } else {
-            obj["isRare"] = false
+            obj.isRare = false
         }
     })
 }
 
-addProperty(allBooks)
+markRareBooks(allBooks)
 console.log(allBooks)
