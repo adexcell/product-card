@@ -1,0 +1,58 @@
+import { productCards } from './product-cards.js'
+
+
+const productCardTemplate = document.getElementById('product-card-template');
+const productCardList = document.getElementById('product-cards-list');
+
+const stringProductCardNames = productCards.reduce((accum, card) => {
+   accum.push(card.name)
+   return accum
+},[]).join("; ")
+
+console.log(stringProductCardNames)
+
+const productNamesAndDescriptions = productCards.reduce((accum, card) => {
+    const name = card.name
+    const description = card.description
+    accum.push({name: description})
+    return accum
+},[])
+
+console.log(productNamesAndDescriptions)
+
+function showProductCards() {
+    let count = prompt("Сколько карточек отобразить? Введите число от 1 до 5");
+    console.log(count)
+    if (isNaN(count) || (parseInt(count) < 1 || parseInt(count) > 5)) {
+        alert("Число должно быть от 1 до 5!")
+        return
+    }
+
+    productCards.slice(0, count).forEach(card => {
+        const cardClone = productCardTemplate.content.cloneNode(true);
+        const currencySign = card.currencySign;
+
+        cardClone.querySelector('.product-image').src = `/src/images/${card.img.name}`
+        cardClone.querySelector('.product-image').width = card.img.width
+        cardClone.querySelector('.product-image').height = card.img.height
+        cardClone.querySelector('.product-image').alt = card.name
+        cardClone.querySelector('.product-category').textContent = card.category
+        cardClone.querySelector('.product-name').textContent = card.name
+        cardClone.querySelector('.product-description').textContent = card.description
+
+        const ingredients = card.ingredients;
+        const productContains = cardClone.querySelector('.product-contains');
+        ingredients.forEach(ingredient => {
+            const ingredientClone = document.createElement("li");
+            ingredientClone.textContent = ingredient
+            productContains.appendChild(ingredientClone)
+        })
+        
+        cardClone.querySelector('.price-value').innerHTML = `${card.price} ${currencySign}`
+        productCardList.appendChild(cardClone)
+    })
+} 
+
+
+
+showProductCards()

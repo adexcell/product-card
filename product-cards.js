@@ -1,0 +1,89 @@
+export const productCards = [
+    {
+        img: {
+            name: 'moisturizing-mousse.png',
+            width: 290,
+            height: 245,
+        },
+        category: 'для нормальной кожи',
+        name: 'Увлажняющий мусс',
+        description: 'Глубоко увлажняют кожу лица, оставляя ее мягкой и гладкой.',
+        ingredients: [
+            'активные натуральные комплексы',
+            'витамины C, A, PP, B и E',
+            'солнцезащитные компоненты',
+        ],
+        price: 2750,
+        currencySign: '&#8381;',
+    },
+    {
+        img: {
+            name: 'moisturizing-mask.png',
+            width: 290,
+            height: 245,
+        },
+        category: 'для нормальной кожи',
+        name: 'Увлажняющая маска',
+        description: 'Способствует удерживанию влаги в верхних слоях кожи.',
+        ingredients: [
+            'воски',
+            'минералы',
+            'масла',
+        ],
+        price: 3500,
+        currencySign: '&#8381;',
+    },
+    {
+        img: {
+            name: 'cleansing-gel.png',
+            width: 290,
+            height: 245,
+        },
+        category: 'для нормальной кожи',
+        name: 'Гель для умывания',
+        description: 'Интенсивно очищает, не повреждает защитный барьер кожи.',
+        ingredients: [
+            'минералы',
+            'витамины C, A, PP, B и E',
+            'солнцезащитные компоненты',
+        ],
+        price: 1650,
+        currencySign: '&#8381;',
+    },
+    {
+        img: {
+            name: 'gift-set-1.png',
+            width: 290,
+            height: 245,
+        },
+        category: 'для нормальной кожи',
+        name: 'Подарочный набор №1',
+        description: 'Набор, состоящий из увлажняющего крема и маски.',
+        ingredients: [
+            'воски',
+            'минералы',
+            'масла',
+        ],
+        price: 4750,
+        currencySign: '&#8381;',
+    },
+    {
+        img: {
+            name: 'gift-set-5.png',
+            width: 290,
+            height: 245,
+        },
+        category: 'для нормальной кожи',
+        name: 'Подарочный набор №5',
+        description: 'Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.',
+        ingredients: [
+            'воски',
+            'минералы',
+            'масла',
+        ],
+        price: 7520,
+        currencySign: '&#8381;',
+    },
+]
+
+
