@@ -1,10 +1,6 @@
 export const productCards = [
     {
-        img: {
-            name: 'moisturizing-mousse.png',
-            width: 290,
-            height: 245,
-        },
+        img: 'moisturizing-mousse',
         category: 'для нормальной кожи',
         name: 'Увлажняющий мусс',
         description: 'Глубоко увлажняют кожу лица, оставляя ее мягкой и гладкой.',
@@ -14,14 +10,9 @@ export const productCards = [
             'солнцезащитные компоненты',
         ],
         price: 2750,
-        currencySign: '&#8381;',
     },
     {
-        img: {
-            name: 'moisturizing-mask.png',
-            width: 290,
-            height: 245,
-        },
+        img: 'moisturizing-mask',
         category: 'для нормальной кожи',
         name: 'Увлажняющая маска',
         description: 'Способствует удерживанию влаги в верхних слоях кожи.',
@@ -31,14 +22,9 @@ export const productCards = [
             'масла',
         ],
         price: 3500,
-        currencySign: '&#8381;',
     },
     {
-        img: {
-            name: 'cleansing-gel.png',
-            width: 290,
-            height: 245,
-        },
+        img: 'cleansing-gel',
         category: 'для нормальной кожи',
         name: 'Гель для умывания',
         description: 'Интенсивно очищает, не повреждает защитный барьер кожи.',
@@ -48,14 +34,9 @@ export const productCards = [
             'солнцезащитные компоненты',
         ],
         price: 1650,
-        currencySign: '&#8381;',
     },
     {
-        img: {
-            name: 'gift-set-1.png',
-            width: 290,
-            height: 245,
-        },
+        img: 'gift-set-1',
         category: 'для нормальной кожи',
         name: 'Подарочный набор №1',
         description: 'Набор, состоящий из увлажняющего крема и маски.',
@@ -65,14 +46,9 @@ export const productCards = [
             'масла',
         ],
         price: 4750,
-        currencySign: '&#8381;',
     },
     {
-        img: {
-            name: 'gift-set-5.png',
-            width: 290,
-            height: 245,
-        },
+        img: 'gift-set-5',
         category: 'для нормальной кожи',
         name: 'Подарочный набор №5',
         description: 'Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.',
@@ -82,7 +58,6 @@ export const productCards = [
             'масла',
         ],
         price: 7520,
-        currencySign: '&#8381;',
     },
 ]
 
