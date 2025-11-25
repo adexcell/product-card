@@ -30,7 +30,6 @@ function showProductCards() {
 
     productCards.slice(0, count).forEach(card => {
         const cardClone = productCardTemplate.content.cloneNode(true);
-        const currencySign = card.currencySign;
 
         cardClone.querySelector('.product-image').src = `/src/images/${card.img}.png`
         cardClone.querySelector('.product-image').width = 290
