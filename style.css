@@ -28,7 +28,7 @@
     z-index: 0;
 }
 
-.cards-list-container {
+#product-cards-list {
     margin-top: 110px;
     display: flex;
     flex-wrap: wrap;
@@ -37,7 +37,8 @@
     
 }
 
-.card-container {
+.product-card {
+    list-style-type: none;
     width: 340px;
     height: 573px;
     padding: 25px;
