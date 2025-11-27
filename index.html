@@ -13,34 +13,70 @@
     />
   </head>
   <body>
-    <button class="button" id="redirect-to-google">Переход на Google</button>
-    <button class="button" id="output-console-log">Вывести в консоль</button>
-    <button class="button" id="change-own-color">Поменяй мне цвет</button>
-    <button class="button" id="change-card-color-button">
-      Поменять цвет одной карточки
-    </button>
-    <button class="button" id="change-card-list-color-button">
-      Поменять цвет всех карточек
-    </button>
-    <div class="catalog">
-      <h1 class="title">Выбери свой продукт</h1>
-      <ul id="product-cards-list"></ul>
-      <template id="product-card-template">
-        <li class="product-card">
-          <img class="product-image"/>
-          <span class="product-category"></span>
-          <h3 class="product-name"></h3>
-          <p class="product-description"></p>
-          <span>Состав:</span>
-          <ul class="product-contains"></ul>
-          <div class="product-price">
-            <span class="price-text">Цена</span>
-            <span class="price-value"></span>
+    <main class="site-main">
+      <div class="catalog">
+        <h1 class="title">Выбери свой продукт</h1>
+        <ul id="product-cards-list"></ul>
+        <template id="product-card-template">
+          <li class="product-card">
+            <img class="product-image"/>
+            <span class="product-category"></span>
+            <h3 class="product-name"></h3>
+            <p class="product-description"></p>
+            <span>Состав:</span>
+            <ul class="product-contains"></ul>
+            <div class="product-price">
+              <span class="price-text">Цена</span>
+              <span class="price-value"></span>
+            </div>
+          </li>
+        </template>
+      </div>
+    </main>
+    <footer class="genius-footer">
+      <div class="wrapper">
+        <div class="footer-top-line">
+          <div class="footer-logo">
+            <a href="#">
+              <div class="footer-logo-header">Product Cards</div>
+            </a>
+            <p class="footer-logo-text">У нас самые лучшие продукты для кожи!</p>
+            <div class="social-links">
+              <a href="#">
+                <img class="footer-logo-img" src="./src/logo/tg.png" alt="" height="17px">
+              </a>
+              <a href="#">
+                <img class="footer-logo-img" src="./src/logo/vk.png" alt="" height="17px">
+              </a>
+            </div>
           </div>
-        </li>
-      </template>
-
-    </div>
+          <div class="footer-subscription">
+            <div class="footer-subscription-header">Подпишись на наши акции:</div>
+            <div class="footer-subscription-buttons">
+              <form action="/index.html" method="GET">
+                <input class="input-email" type="email" id="input-email" placeholder="Введи Email...">
+                <button class="button-subscription" type="submit">Подписаться</button>
+              </form>
+            </div>
+            <div class="footer-subscription-line"></div>
+          </div>
+          <div class="footer-menu">
+            <div class="footer-menu-header">Быстрые ссылки</div>
+            <nav class="menu">
+              <ul>
+                <li class="menu-li"><a href="#">Главная</a></li>
+                <li class="menu-li"><a href="#">Магазин</a></li>
+                <li class="menu-li"><a href="#">Контакты</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="footer-bottom-line">
+          <hr class="footer-bottom-hr">
+          <a href="/index.html">www.product-cards.com</a>©all right reserve
+        </div>
+      </div>
+    </footer>
     <script src="main.js"></script>
     <script type="module" src="homework-7.js"></script>
     <script type="module" src="homework-8.js"></script>
