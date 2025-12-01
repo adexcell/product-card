@@ -9,7 +9,7 @@ const stringProductCardNames = productCards.reduce((accum, card) => {
    return accum
 },[]).join("; ")
 
-console.log(stringProductCardNames)
+// console.log(stringProductCardNames)
 
 const productNamesAndDescriptions = productCards.reduce((accum, card) => {
     const name = card.name
@@ -18,17 +18,17 @@ const productNamesAndDescriptions = productCards.reduce((accum, card) => {
     return accum
 },[])
 
-console.log(productNamesAndDescriptions)
+// console.log(productNamesAndDescriptions)
 
 function showProductCards() {
-    let count = prompt("Сколько карточек отобразить? Введите число от 1 до 5");
+    // let count = prompt("Сколько карточек отобразить? Введите число от 1 до 5");
 
-    if (isNaN(count) || (parseInt(count) < 1 || parseInt(count) > 5)) {
-        alert("Число должно быть от 1 до 5!")
-        return
-    }
+    // if (isNaN(count) || (parseInt(count) < 1 || parseInt(count) > 5)) {
+    //     alert("Число должно быть от 1 до 5!")
+    //     return
+    // }
 
-    productCards.slice(0, count).forEach(card => {
+    productCards.forEach(card => {
         const cardClone = productCardTemplate.content.cloneNode(true);
 
         cardClone.querySelector('.product-image').src = `/src/images/${card.img}.png`
