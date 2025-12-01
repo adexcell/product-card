@@ -13,8 +13,110 @@
     />
   </head>
   <body>
+    <button class="button" id="sign-in-button">Авторизация</button>
+    <button class="button" id="sign-up-button">Регистрация</button>
     <main class="site-main">
       <div class="catalog">
+        <div id="sign-up-wrapper" class="overlay">
+          <div class="sign-layout">
+            <div id="close-sign-up-form" class="close">&times;</div>
+            <h2 class="form-header">Добро пожаловать!</h2>
+            <form id="sign-up-form" class="modal-form" autocomplete="on">
+              <label for="sign-up-name" class="label">Имя:</label>
+                <input
+                  id="sign-up-name"
+                  name="name"
+                  type="text"
+                  placeholder="Введите имя"
+                  autocomplete="given-name"
+                  class="input-sign"
+                  required
+                />
+              <label for="sign-up-surname" class="label">Фамилия:</label>
+                <input
+                  id="sign-up-surname"
+                  name="surname"
+                  type="text"
+                  placeholder="Введите фамилию"
+                  autocomplete="family-name"
+                  class="input-sign"
+                  required
+                />
+              <label for="sign-up-bday" class="label">Дата рождения:</label>
+                <input
+                  id="sign-up-bday"
+                  name="bday"
+                  type="date"
+                  placeholder="01.01.2000"
+                  autocomplete="bday"
+                  class="input-sign"
+                  required
+                />
+              <label for="sign-up-login" class="label">Логин:</label>
+                <input
+                  id="sign-up-login"
+                  name="login"
+                  type="text"
+                  placeholder="Введите логин"
+                  class="input-sign"
+                  required
+                />
+              <label for="sign-up-pswd" class="label">Пароль:</label>
+                <input
+                  id="sign-up-pswd"
+                  name="password"
+                  type="password"
+                  placeholder="Введите пароль"
+                  class="input-sign"
+                  required
+                />
+              <label for="sign-up-pswd-confirm" class="label">Повторите пароль:</label>
+                <input
+                  id="sign-up-pswd-confirm"
+                  name="repeatpassword"
+                  type="password"
+                  placeholder="Повторите пароль"
+                  class="input-sign"
+                  required
+                />
+                <div class="form-buttons">
+                  <input class="button" id="sign-in-clear-button" type="reset">
+                  <button class="button" id="sign-in-submit-button" type="submit">Зарегистрироваться</button>
+                </div>
+            </form>
+            
+          </div>
+        </div>
+        <div id="sign-in-wrapper" class="overlay">
+          <div class="sign-layout">
+            <div id="close-sign-in-form" class="close">&times;</div>
+            <h2 class="form-header">Авторизация</h2>
+            <form id="sign-in-form" class="modal-form">
+              <label for="sign-in-login" class="label">Логин:</label>
+                <input
+                  id="sign-in-login"
+                  name="login"
+                  type="text"
+                  placeholder="Введите логин"
+                  class="input-sign"
+                  required
+                />
+              <label for="sign-in-psw" class="label">Пароль:</label>
+                <input
+                  id="sign-in-psw"
+                  name="password"
+                  type="password"
+                  placeholder="Введите пароль"
+                  class="input-sign"
+                  required
+                />
+                <div class="form-buttons">
+                  <input class="button" id="sign-up-clear-button" type="reset">
+                  <button class="button" id="sign-up-submit-button" type="submit">Войти</button>
+                </div>
+            </form>
+          </div>
+        </div>
         <h1 class="title">Выбери свой продукт</h1>
         <ul id="product-cards-list"></ul>
         <template id="product-card-template">
@@ -53,8 +155,8 @@
           <div class="footer-subscription">
             <div class="footer-subscription-header">Подпишись на наши акции:</div>
             <div class="footer-subscription-buttons">
-              <form action="/index.html" method="GET">
-                <input class="input-email" type="email" id="input-email" placeholder="Введи Email...">
+              <form id="email-form">
+                <input class="input-email" name="email" type="email" placeholder="Введи Email...">
                 <button class="button-subscription" type="submit">Подписаться</button>
               </form>
             </div>
@@ -77,8 +179,7 @@
         </div>
       </div>
     </footer>
-    <script src="main.js"></script>
-    <script type="module" src="homework-7.js"></script>
     <script type="module" src="homework-8.js"></script>
+    <script src="homework-9.js"></script>
   </body>
 </html>
