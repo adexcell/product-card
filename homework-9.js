@@ -6,7 +6,7 @@ emailForm.addEventListener('submit', (event) => {
     const form = event.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    if (data.email==="") {
+    if (!data.email) {
         event.preventDefault();
         console.log("email пустой")
     }
@@ -21,8 +21,8 @@ const signInWrapper = document.getElementById('sign-in-wrapper');
 const signUpButton = document.getElementById('sign-up-button');
 const signInButton = document.getElementById('sign-in-button');
 
-const closeSU = document.getElementById('close-sign-up-form');
-const closeSI = document.getElementById('close-sign-in-form');
+const closeSUButton = document.getElementById('close-sign-up-form');
+const closeSIButton = document.getElementById('close-sign-in-form');
 
 signUpButton.onclick = () => {
     signUpWrapper.style.display = "block";
@@ -32,11 +32,11 @@ signInButton.onclick = () => {
     signInWrapper.style.display = "block";
 }
 
-closeSU.onclick = () => {
+closeSUButton.onclick = () => {
     signUpWrapper.style.display = "none";
 }
 
-closeSI.onclick = () => {
+closeSIButton.onclick = () => {
     signInWrapper.style.display = "none";
 }
 
@@ -53,7 +53,7 @@ signUpForm.addEventListener('submit', (event) => {
     const form = event.target;
     const formData = new FormData(form);
     user = Object.fromEntries(formData.entries());
-    if (user.password !== user.repeatpassword) {
+    if (user.password !== user.repeatPassword) {
         alert("wrong password")
     }
     user.createdOn = new Date()

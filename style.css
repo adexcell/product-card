@@ -13,7 +13,7 @@
     color: #515076;
 }
 
-a {
+.link {
     text-decoration: none;
     color: inherit
 }
@@ -236,7 +236,7 @@ a {
     margin-bottom: 42px;
 }
 
-.footer-logo-img {
+.footer-logo-icon {
     margin-right: 30px
 }
 
