@@ -4,23 +4,7 @@ import { productCards } from './product-cards.js'
 const productCardTemplate = document.getElementById('product-card-template');
 const productCardList = document.getElementById('product-cards-list');
 
-const stringProductCardNames = productCards.reduce((accum, card) => {
-   accum.push(card.name)
-   return accum
-},[]).join("; ")
-
-// console.log(stringProductCardNames)
-
-const productNamesAndDescriptions = productCards.reduce((accum, card) => {
-    const name = card.name
-    const description = card.description
-    accum.push({[name]: description})
-    return accum
-},[])
-
-// console.log(productNamesAndDescriptions)
-
-function showProductCards() {
+export function showProductCards() {
     // let count = prompt("Сколько карточек отобразить? Введите число от 1 до 5");
 
     // if (isNaN(count) || (parseInt(count) < 1 || parseInt(count) > 5)) {
@@ -54,4 +38,3 @@ function showProductCards() {
 
 
 
-showProductCards()
