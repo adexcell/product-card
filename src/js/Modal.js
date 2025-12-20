@@ -1,11 +1,11 @@
 export class Modal {
-    constructor(modal_id, button_id) {
-        this.modal = document.getElementById(modal_id)
+    constructor(modalId, buttonId) {
+        this.modal = document.getElementById(modalId)
         this.overlay = document.getElementById('overlay')
-        const open_button = document.getElementById(button_id)
-        const close_button = this.modal.querySelector('.close')
-        this.#initOpen(open_button)
-        this.#initClose(close_button)
+        const openButton = document.getElementById(buttonId)
+        const closeButton = this.modal.querySelector('.close')
+        this.#initOpen(openButton)
+        this.#initClose(closeButton)
     }
 
     open() {

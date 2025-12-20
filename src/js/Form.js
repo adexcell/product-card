@@ -1,6 +1,6 @@
 export class Form {
-    constructor(form_id) {
-        this.form = document.getElementById(form_id); 
+    constructor(formId) {
+        this.form = document.getElementById(formId); 
         this.button = this.form.querySelector('.button')
     }
 
@@ -14,9 +14,5 @@ export class Form {
 
     reset() {
         this.form.reset();
-    }
-
-    initButton() {
-        this.button.addEventListener('click')
     }
 }
