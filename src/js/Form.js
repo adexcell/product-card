@@ -1,7 +1,6 @@
 export class Form {
     constructor(formId) {
         this.form = document.getElementById(formId); 
-        this.button = this.form.querySelector('.button')
     }
 
     getData() {
