@@ -4,11 +4,10 @@
 "Сейчас в X температура  — Y градусов по Цельсию"
 */
 
-const showTemperature = (city, t) => {
+export const showTemperature = (city, t) => {
     console.log(`Сейчас в ${city} температура  — ${t} градусов по Цельсию`)
 }
 
-showTemperature("Moscow", 10)
 
 
 /*
@@ -18,9 +17,9 @@ showTemperature("Moscow", 10)
 скорости звука — выводим лог "Сверхзвуковая скорость", если ниже —
 "Дозвуковая скорость"? если равна — "Скорость звука"
 */
-const SPEED_OF_SOUND = 343;
+export const SPEED_OF_SOUND = 343;
 
-const compareWithSpeedOfSound = speed => {
+export const compareWithSpeedOfSound = speed => {
     if (speed > speedOfSound) {
         console.log("Сверхзвуковая скорость")
     } else if (speed === speedOfSound) {
@@ -39,22 +38,21 @@ const compareWithSpeedOfSound = speed => {
 "(ваше название товара) приобретён. Спасибо за покупку!", если нет -
 обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс". 
 */
-const product = "milk";
-const price = "100";
+export const product = "milk";
+export const price = "100";
 
-const makePurchase = cash => {
+export const makePurchase = cash => {
     const successMessage = `${product} приобретён. Спасибо за покупку!`
     const errorMessage = `Вам не хватает ${price - cash}, пополните баланс`
     console.log(cash > price ? successMessage : errorMessage)
 }
-makePurchase(50)
 
 
 /*
 Для улучшения аналитических способностей:
 6. Создать 1 функцию и именовать её по своему усмотрению
 */
-function square(number) {
+export function square(number) {
     return number * number
 }
 
@@ -63,6 +61,6 @@ function square(number) {
 7. Создать 3 переменных (без разницы каких) и именовать их по своему 
 усмотрению
 */
-const student = "Student";
-let dayOfTheWeek = "Monday";
-var taskNumber = 7;
+export const student = "Student";
+export let dayOfTheWeek = "Monday";
+export var taskNumber = 7;

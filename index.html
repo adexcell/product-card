@@ -15,108 +15,100 @@
   <body>
     <button class="button" id="sign-in-button">Авторизация</button>
     <button class="button" id="sign-up-button">Регистрация</button>
+    <div id="overlay" class="overlay"></div>
+    <div id="sign-up-modal"  class="modal">
+      <div id="close-sign-up-form" class="close">&times;</div>
+      <h2 class="form-header">Добро пожаловать!</h2>
+      <form id="sign-up-form" class="modal-form">
+        <label for="sign-up-name" class="label">Имя:</label>
+          <input
+            id="sign-up-name"
+            name="name"
+            type="text"
+            placeholder="Введите имя"
+            class="input-sign form_input"
+            required
+          />
+        <label for="sign-up-surname" class="label">Фамилия:</label>
+          <input
+            id="sign-up-surname"
+            name="surname"
+            type="text"
+            placeholder="Введите фамилию"
+            class="input-sign form_input"
+            required
+          />
+        <label for="sign-up-bday" class="label">Дата рождения:</label>
+          <input
+            id="sign-up-bday"
+            name="bday"
+            type="date"
+            placeholder="01.01.2000"
+            class="input-sign form_input"
+          />
+        <label for="sign-up-login" class="label">Логин:</label>
+          <input
+            id="sign-up-login"
+            name="login"
+            type="text"
+            placeholder="Введите логин"
+            class="input-sign form_input"
+            required
+          />
+        <label for="sign-up-pswd" class="label">Пароль:</label>
+          <input
+            id="sign-up-pswd"
+            name="password"
+            type="password"
+            placeholder="Введите пароль"
+            class="input-sign form_input"
+            required
+          />
+        <label for="sign-up-pswd-confirm" class="label">Повторите пароль:</label>
+          <input
+            id="sign-up-pswd-confirm"
+            name="repeatPassword"
+            type="password"
+            placeholder="Повторите пароль"
+            class="input-sign form_input"
+            required
+          />
+          <div class="form-buttons">
+            <button class="button" id="sign-in-submit-button" type="submit">Зарегистрироваться</button>
+          </div>
+      </form>
+      
+    </div>
+
+    <div id="sign-in-modal" class="modal">
+      <div id="close-sign-in-form" class="close">&times;</div>
+      <h2 class="form-header">Авторизация</h2>
+      <form id="sign-in-form" class="modal-form">
+        <label for="sign-in-login" class="label">Логин:</label>
+          <input
+            id="sign-in-login"
+            name="login"
+            type="text"
+            placeholder="Введите логин"
+            class="input-sign form_input"
+            required
+          />
+        <label for="sign-in-psw" class="label">Пароль:</label>
+          <input
+            id="sign-in-psw"
+            name="password"
+            type="password"
+            placeholder="Введите пароль"
+            class="input-sign form_input"
+            required
+          />
+          <div class="form-buttons">
+            <button class="button" id="sign-up-submit-button" type="submit">Войти</button>
+          </div>
+      </form>
+    </div>
     <main class="site-main">
       <div class="catalog">
-        <div id="sign-up-wrapper" class="overlay">
-          <div class="sign-layout">
-            <div id="close-sign-up-form" class="close">&times;</div>
-            <h2 class="form-header">Добро пожаловать!</h2>
-            <form id="sign-up-form" class="modal-form" autocomplete="on">
-              <label for="sign-up-name" class="label">Имя:</label>
-                <input
-                  id="sign-up-name"
-                  name="name"
-                  type="text"
-                  placeholder="Введите имя"
-                  autocomplete="given-name"
-                  class="input-sign"
-                  required
-                />
-              <label for="sign-up-surname" class="label">Фамилия:</label>
-                <input
-                  id="sign-up-surname"
-                  name="surname"
-                  type="text"
-                  placeholder="Введите фамилию"
-                  autocomplete="family-name"
-                  class="input-sign"
-                  required
-                />
-              <label for="sign-up-bday" class="label">Дата рождения:</label>
-                <input
-                  id="sign-up-bday"
-                  name="bday"
-                  type="date"
-                  placeholder="01.01.2000"
-                  autocomplete="bday"
-                  class="input-sign"
-                  required
-                />
-              <label for="sign-up-login" class="label">Логин:</label>
-                <input
-                  id="sign-up-login"
-                  name="login"
-                  type="text"
-                  placeholder="Введите логин"
-                  class="input-sign"
-                  required
-                />
-              <label for="sign-up-pswd" class="label">Пароль:</label>
-                <input
-                  id="sign-up-pswd"
-                  name="password"
-                  type="password"
-                  placeholder="Введите пароль"
-                  class="input-sign"
-                  required
-                />
-              <label for="sign-up-pswd-confirm" class="label">Повторите пароль:</label>
-                <input
-                  id="sign-up-pswd-confirm"
-                  name="repeatPassword"
-                  type="password"
-                  placeholder="Повторите пароль"
-                  class="input-sign"
-                  required
-                />
-                <div class="form-buttons">
-                  <input class="button" id="sign-in-clear-button" type="reset">
-                  <button class="button" id="sign-in-submit-button" type="submit">Зарегистрироваться</button>
-                </div>
-            </form>
-            
-          </div>
-        </div>
-        <div id="sign-in-wrapper" class="overlay">
-          <div class="sign-layout">
-            <div id="close-sign-in-form" class="close">&times;</div>
-            <h2 class="form-header">Авторизация</h2>
-            <form id="sign-in-form" class="modal-form">
-              <label for="sign-in-login" class="label">Логин:</label>
-                <input
-                  id="sign-in-login"
-                  name="login"
-                  type="text"
-                  placeholder="Введите логин"
-                  class="input-sign"
-                  required
-                />
-              <label for="sign-in-psw" class="label">Пароль:</label>
-                <input
-                  id="sign-in-psw"
-                  name="password"
-                  type="password"
-                  placeholder="Введите пароль"
-                  class="input-sign"
-                  required
-                />
-                <div class="form-buttons">
-                  <input class="button" id="sign-up-clear-button" type="reset">
-                  <button class="button" id="sign-up-submit-button" type="submit">Войти</button>
-                </div>
-            </form>
-          </div>
-        </div>
         <h1 class="title">Выбери свой продукт</h1>
         <ul id="product-cards-list"></ul>
         <template id="product-card-template">
@@ -145,10 +137,10 @@
             <p class="footer-logo-text">У нас самые лучшие продукты для кожи!</p>
             <div class="social-links">
               <a class="link" href="#">
-                <img class="footer-logo-icon" src="./src/icons/tg.png" alt="" height="17px">
+                <img class="footer-logo-icon" src="./src/icons/tg.svg" alt="" height="17px">
               </a>
               <a class="link" href="#">
-                <img class="footer-logo-icon" src="./src/icons/vk.png" alt="" height="17px">
+                <img class="footer-logo-icon" src="./src/icons/vk.svg" alt="" height="17px">
               </a>
             </div>
           </div>
@@ -156,8 +148,8 @@
             <div class="footer-subscription-header">Подпишись на наши акции:</div>
             <div class="footer-subscription-buttons">
               <form id="email-form">
-                <input class="input-email" name="email" type="email" placeholder="Введи Email...">
-                <button class="button-subscription" type="submit">Подписаться</button>
+                <input class="input-email form_input" name="email" type="email" placeholder="Введи Email...">
+                <button class="button-subscription button" type="submit">Подписаться</button>
               </form>
             </div>
             <div class="footer-subscription-line"></div>
@@ -179,7 +171,6 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="homework-8.js"></script>
-    <script src="homework-9.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
