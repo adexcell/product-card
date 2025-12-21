@@ -1,92 +1,7 @@
-class Drink {
-    #temperature;
-
-    constructor(name, size, price, temperature) {
-        this.name = name;
-        this.size = size;
-        this.price = price;
-        this.#temperature = temperature;
-    }
-
-    getInfo() {
-        return `Напиток: ${this.name}, \nразмер: ${this.size}, \nцена: ${this.price}, \nтемпература: ${this.#temperature}`
-    }
-
-    getTemperature() {
-        return this.#temperature
-    }
-
-    setTemperature(value) {
-        this.#temperature = value
-    }
-
-    #makeDrink() {
-        return `${this.name} готовится...`
-    }
-
-    serve() {
-        this.#makeDrink()
-        return `Подаём ${this.name} (${this.size})`
-    }
-}
-
-class Lemonade extends Drink {
-    constructor(name, size, price, temperature, fruitType) {
-        super(name, size, price, temperature)
-        this.fruitType = fruitType
-    }
-
-    getInfo() {
-        return `${super.getInfo()}, фрукт: ${this.fruitType}`
-    }
-}
-
-class Tea extends Drink {
-    constructor(name, size, price, temperature, teaType) {
-        super(name, size, price, temperature)
-        this.teaType = teaType
-    }
-
-    getInfo() {
-        return `${super.getInfo()}, тип чая: ${this.teaType}`
-    }
-}
-
-class Coffee extends Drink {
-    constructor(name, size, price, temperature, grainType, milkType) {
-        super(name, size, price, temperature)
-        this.grainType = grainType
-        this.milkType = milkType
-    }
-
-    getInfo() {
-        return `${super.getInfo()}, зёрна: ${this.grainType}, молоко: ${this.milkType}`
-    }
-}
-
-class Cafe {
-    #mainHr = `\n-===============-\n`
-    #hr = `\n-==========-\n`
-
-    constructor(name, location, drinkArr) {
-        this.name = name
-        this.location = location
-        this.menu = drinkArr.map(drink => drink.getInfo()).join(`${this.#hr}`)
-    }
-
-    getInfo() {
-        return `${this.#mainHr}Кафе: ${this.name}, местоположение: ${this.location}${this.#mainHr}`
-    }
-
-    getMenu() {
-        return `${this.#mainHr}Меню:\n${this.menu}${this.#mainHr}`
-    }
-
-    makeOrder(drink) {
-        console.log(`Заказ в кафе "${this.name}": ${drink.name}`)
-        return drink.serve();
-    }
-}
+import { Cafe } from "./homework-11/Cafe.js";
+import { Lemonade } from "./homework-11/Lemonade.js";
+import { Coffee } from "./homework-11/Coffee.js";
+import { Tea } from "./homework-11/Tea.js";
 
 const espresso = new Coffee(
   'Эспрессо',
@@ -180,9 +95,9 @@ const mintLemonade = new Lemonade(
   'мята'
 );
 
-cofeeArr = [espresso, americano, latte, cappuccino];
-teaArr = [blackTea, greenTea, herbalTea, icedTea];
-lemonadeArr = [classicLemonade, orangeLemonade, mintLemonade];
+const cofeeArr = [espresso, americano, latte, cappuccino];
+const teaArr = [blackTea, greenTea, herbalTea, icedTea];
+const lemonadeArr = [classicLemonade, orangeLemonade, mintLemonade];
 
 const coffeeHouse = new Cafe("Кофейня", "Grove Street", cofeeArr);
 const teaHouse = new Cafe("Чайхана", "China Town", teaArr);
