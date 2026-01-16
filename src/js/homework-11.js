@@ -114,3 +114,9 @@ console.log(teaHouse.makeOrder(herbalTea))
 console.log(familyCafe.getInfo())
 console.log(familyCafe.getMenu())
 console.log(familyCafe.makeOrder(orangeLemonade))
+
+S
+O
+L - 
+I
+D
