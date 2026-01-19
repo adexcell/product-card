@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="async.css" />
+	<title>Users</title>
+</head>
+<body>
+	<div id="status-modal" class="modal">
+		<h1 id="status-msg">Данные загружаются</h1>
+	</div>
+
+	<ul id="user-cards-list"></ul>
+	<template id="user-card-template">
+		<li>
+			<span class="id"></span>
+			<span class="name"></span>
+			<span class="surname"></span>
+			<span class="email"></span>
+			<span class="age"></span>
+		</li>
+	</template>
+
+	<div class="nav">
+    <button 
+			id="load-cards-btn" 
+			class="button"
+		>
+			Загрузить все карточки
+		</button>
+    <button 
+			id="delete-all-card-btn"
+			class="button"
+		>
+			Удалить все карточки
+		</button>
+    
+    <div class="del-card-group">
+      <button 
+				id="delete-card-btn" 
+				class="button"
+			>
+				Удалить №:
+			</button>
+      <input 
+        class="input" 
+        type="number" 
+        placeholder="1-5"
+        min="1" max="5"
+      >
+    </div>
+	</div>
+
+	<script src="async.js"></script>
+</body>
+</html>
