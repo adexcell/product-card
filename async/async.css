@@ -95,9 +95,39 @@ body {
     display: flex;
 }
 
-#user-cards-list {
+.user-cards-list {
     list-style: none;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 600px;
+    margin-top: 110px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 45px;
 }
+
+.user-card {
+    background-color: #fff;
+    border: 1px solid #A5A3B9;
+    border-radius: 12px;
+    padding: 12px 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.user-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10);
+}
+
+.user-card {
+    display: flex;
+    align-items: right;
+    gap: 8px;
+    flex-direction: column;
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #111827;
+}
+
+
+
