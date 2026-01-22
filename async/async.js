@@ -53,6 +53,7 @@ async function fillLocalStorageByUsers(cards) {
 }
 
 function showUserCards(cards) {
+  userCardList.innerHTML = '';
 	cards.forEach(card => {
 		const cardClone = userCardTemplate.content.cloneNode(true);
 		cardClone.querySelector(".id").textContent = card.id;
@@ -69,20 +70,15 @@ function showUserCards(cards) {
 }
 
 function deleteCard(cardId) {
-  const updatedCards = userCards.filter(card => card.id != cardId);
-  localStorage.setItem("userCards", JSON.stringify(updatedCards));
-  
-  const cardElement = document.querySelector(`[data-id="${cardId}"]`)?.closest('.user-card');
-  if (cardElement) {
-    cardElement.remove();
-  }
-  
-  userCards = updatedCards;
-  
+  userCards = userCards.filter(card => card.id != cardId);
+  localStorage.setItem("userCards", JSON.stringify(userCards));
+
   if (userCards.length === 0) {
     showStatusMessage(DATA_EMPTY);
     localStorage.removeItem("userCards");
-  }
+  } 
+
+  showUserCards(userCards);
 }
 
 async function loadAllCards() {
@@ -92,7 +88,7 @@ async function loadAllCards() {
 		if (userCards && Array.isArray(userCards)) {
 			showStatusMessage(DATA_LOADED);
 			setTimeout(async () => {
-				await fillLocalStorage(userCards);
+				await fillLocalStorageByUsers(userCards);
         userCardList.innerHTML = '';
 				modal.classList.remove("modal-showed");
 				showUserCards(userCards);
