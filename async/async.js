@@ -4,7 +4,6 @@ const loadAllCardsBtn = document.getElementById("load-cards-btn")
 
 const delAllCardsBtn = document.getElementById("delete-all-card-btn")
 const delCardInput = document.getElementById("del-card-input")
-const delCardBtn = document.getElementById("delete-card-btn")
 
 const DATA_LOADED = "Данные загружаются...";
 const DATA_EMPTY = "Данные отсутствуют."
@@ -19,13 +18,14 @@ function showStatusMessage(message) {
 
 let userCards = []
 
-if (localStorage.length === 0) {
-  showStatusMessage(DATA_EMPTY)
-} else {
-	for (let i = 0; i < localStorage.length; i++) {
-		userCards.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
-	}
-	showUserCards(userCards)
+function initUserCards() {
+  const saved = localStorage.getItem("userCards");
+  userCards = saved ? JSON.parse(saved) : [];
+  if (userCards.length === 0) {
+    showStatusMessage(DATA_EMPTY)
+  } else {
+    showUserCards(userCards)
+  }
 }
 
 async function fetchUsers() {
@@ -46,9 +46,7 @@ async function fillLocalStorage(cards) {
 		return
 	}
 
-	cards.forEach(card => {
-      localStorage.setItem(card.id, JSON.stringify(card));
-		})
+	localStorage.setItem("userCards", JSON.stringify(cards))
 }
 
 function showUserCards(cards) {
@@ -60,21 +58,42 @@ function showUserCards(cards) {
 		cardClone.querySelector(".email").textContent = card.email
 		cardClone.querySelector(".age").textContent = card.age
 
+    const deleteBtn = cardClone.querySelector(".close-btn");
+    deleteBtn.dataset.id = card.id;
+
 		userCardList.appendChild(cardClone)
 	})
 }
 
-loadAllCardsBtn.addEventListener('click', async () => {
-	try {
+function deleteCard(cardId) {
+  const updatedCards = userCards.filter(card => card.id != cardId);
+  localStorage.setItem("userCards", JSON.stringify(updatedCards));
+  
+  const cardElement = document.querySelector(`[data-id="${cardId}"]`)?.closest('.user-card');
+  if (cardElement) {
+    cardElement.remove();
+  }
+  
+  userCards = updatedCards;
+  
+  if (userCards.length === 0) {
+    showStatusMessage(DATA_EMPTY);
+    localStorage.removeItem("userCards")
+  }
+}
+
+async function loadAllCards() {
+  try {
 		userCards = await fetchUsers()
 		
 		if (userCards && Array.isArray(userCards)) {
 			showStatusMessage(DATA_LOADED)
 			setTimeout(async () => {
 				await fillLocalStorage(userCards)
-				modal.classList.remove("modal-showed");
+        userCardList.innerHTML = ''
+				modal.classList.remove("modal-showed")
 				showUserCards(userCards)
-			},3000)
+			},800)
 			
 		} else {
 			console.error('userCards: ', userCards)
@@ -82,34 +101,26 @@ loadAllCardsBtn.addEventListener('click', async () => {
 	} catch (error) {
 		console.log("Ошибка загрузки карточек: ", error)
 	}
-});
+}
 
-delAllCardsBtn.addEventListener('click', () => {
-	userCardList.innerHTML = '';
-	localStorage.clear()
+loadAllCardsBtn.addEventListener('click', loadAllCards);
+
+function handleDeleteAllCards() {
+  userCardList.innerHTML = '';
+	localStorage.removeItem("userCards")
 	userCards = [];
 	showStatusMessage(DATA_EMPTY)
-})
+}
 
-delCardBtn.addEventListener('click', () => {
-	const cardID = parseInt(delCardInput.value)
+delAllCardsBtn.addEventListener('click', handleDeleteAllCards)
 
-	if (!cardID || cardID < 1) {
-		alert("Введите ID от 1 до 5")
-		return
-	}
+function handleDeleteOne(event) {
+  const deleteBtn = event.target.closest('.close-btn');
+  if (deleteBtn) {
+    deleteCard(deleteBtn.dataset.id)
+  }
+}
 
-	const cardData = localStorage.getItem(cardID)
-	if (!cardData) {
-		alert(`Карточка ID=${cardID} не найдена`)
-		return
-	}
+userCardList.addEventListener('click', handleDeleteOne)
 
-	localStorage.removeItem(cardID);
-	userCardList.innerHTML = '';
-	userCards = userCards.filter(card => card.id != cardID)
-	showUserCards(userCards)
-	if (userCardList.children.length === 0) {
-		showStatusMessage(DATA_EMPTY)
-	}
-})
+initUserCards()

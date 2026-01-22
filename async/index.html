@@ -1,68 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="async.css" />
 	<title>Users</title>
 </head>
+
 <body>
 	<div id="status-modal" class="modal">
 		<h1 id="status-msg"></h1>
 	</div>
 
 	<div class="nav">
-    <button 
-			id="load-cards-btn" 
-			class="button"
-		>
+		<button id="load-cards-btn" class="button">
 			Загрузить все карточки
 		</button>
-    <button 
-			id="delete-all-card-btn"
-			class="button"
-		>
+		<button id="delete-all-card-btn" class="button">
 			Удалить все карточки
 		</button>
-    
-    <div class="del-card-group">
-      <button 
-				id="delete-card-btn" 
-				class="button"
-			>
-				Удалить №:
-			</button>
-      <input 
-				id="del-card-input"
-        class="input" 
-        type="number" 
-        placeholder="1-5"
-        min="1" max="5"
-      >
-    </div>
 	</div>
 
 	<ul id="user-cards-list" class="user-cards-list"></ul>
 	<template id="user-card-template">
 		<li class="user-card">
-			<div class="card-el">
-				<span>№:</span> <span class="id"></span>
+			<div class="card-header">
+  			<div class="card-title">
+          <span>User №</span>
+				  <span class="id"></span>
+        </div>
+  			<button class="close-btn" type="button" aria-label="Удалить">
+    			<span class="close-icon"></span>
+  			</button>
 			</div>
 			<div class="card-el">
-				<span>Name:</span> <span class="name"></span>
+				<span>Name:</span>
+				<span class="name"></span>
 			</div>
 			<div class="card-el">
-				<span>Surname:</span> <span class="surname"></span>
+				<span>Surname:</span>
+				<span class="surname"></span>
 			</div>
 			<div class="card-el">
-				<span>Email:</span> <span class="email"></span>
+				<span>Email:</span>
+				<span class="email"></span>
 			</div>
 			<div class="card-el">
-				<span>Age:</span> <span class="age"></span>
+				<span>Age:</span>
+				<span class="age"></span>
 			</div>
 		</li>
 	</template>
 
 	<script src="async.js"></script>
 </body>
+
 </html>
