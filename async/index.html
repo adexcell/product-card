@@ -2,58 +2,54 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="async.css" />
-	<title>Users</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="async.css" />
+  <title>Users</title>
 </head>
 
 <body>
-	<div id="status-modal" class="modal">
-		<h1 id="status-msg"></h1>
-	</div>
+  <div id="status-modal" class="modal">
+    <h1 id="status-msg"></h1>
+  </div>
 
-	<div class="nav">
-		<button id="load-cards-btn" class="button">
-			Загрузить все карточки
-		</button>
-		<button id="delete-all-card-btn" class="button">
-			Удалить все карточки
-		</button>
-	</div>
+  <div class="nav">
+    <button id="load-cards-btn" class="button">Загрузить все карточки</button>
+    <button id="delete-all-card-btn" class="button">Удалить все карточки</button>
+  </div>
 
-	<ul id="user-cards-list" class="user-cards-list"></ul>
-	<template id="user-card-template">
-		<li class="user-card">
-			<div class="card-header">
-  			<div class="card-title">
+  <ul id="user-cards-list" class="user-cards-list"></ul>
+  <template id="user-card-template">
+    <li class="user-card">
+      <div class="card-header">
+        <div class="card-title">
           <span>User №</span>
-				  <span class="id"></span>
+          <span class="id"></span>
         </div>
-  			<button class="close-btn" type="button" aria-label="Удалить">
-    			<span class="close-icon"></span>
-  			</button>
-			</div>
-			<div class="card-el">
-				<span>Name:</span>
-				<span class="name"></span>
-			</div>
-			<div class="card-el">
-				<span>Surname:</span>
-				<span class="surname"></span>
-			</div>
-			<div class="card-el">
-				<span>Email:</span>
-				<span class="email"></span>
-			</div>
-			<div class="card-el">
-				<span>Age:</span>
-				<span class="age"></span>
-			</div>
-		</li>
-	</template>
+        <button class="close-btn" type="button" aria-label="Удалить">
+          <span class="close-icon"></span>
+        </button>
+      </div>
+      <div class="card-el">
+        <span>Name:</span>
+        <span class="name"></span>
+      </div>
+      <div class="card-el">
+        <span>Surname:</span>
+        <span class="surname"></span>
+      </div>
+      <div class="card-el">
+        <span>Email:</span>
+        <span class="email"></span>
+      </div>
+      <div class="card-el">
+        <span>Age:</span>
+        <span class="age"></span>
+      </div>
+    </li>
+  </template>
 
-	<script src="async.js"></script>
+  <script src="async.js"></script>
 </body>
 
 </html>
