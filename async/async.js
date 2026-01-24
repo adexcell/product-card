@@ -12,14 +12,13 @@ const userCardTemplate = document.getElementById("user-card-template");
 const userCardList = document.getElementById("user-cards-list");
 
 function showStatusMessage(message) {
-	modal.classList.add("modal-showed");
-	statusMessage.textContent = message;
+  modal.classList.add("modal-showed");
+  statusMessage.textContent = message;
 }
 
 let userCards = [];
 
 function initUserCards() {
-
   const saved = localStorage.getItem("userCards");
   userCards = saved ? JSON.parse(saved) : [];
   if (userCards.length === 0) {
@@ -30,43 +29,43 @@ function initUserCards() {
 }
 
 async function fetchUsers() {
-	try {
-		const response = await fetch('users.json');
-		if (!response.ok) {
+  try {
+    const response = await fetch('users.json');
+    if (!response.ok) {
       throw new Error("failed to fetch user data");
     }
-  	const userCards = await response.json();
-  	return Array.from(userCards);
-	} catch (error) {
-		console.log("Ошибка: ", error);
-		return [];
-	} 
+    const userCards = await response.json();
+    return Array.from(userCards);
+  } catch (error) {
+    console.log("Ошибка: ", error);
+    return [];
+  }
 }
 
 async function fillLocalStorageByUsers(cards) {
-	if (!Array.isArray(cards)) {
-		console.error('cards не массив: ', cards);
-		return;
-	}
+  if (!Array.isArray(cards)) {
+    console.error('cards не массив: ', cards);
+    return;
+  }
 
-	localStorage.setItem("userCards", JSON.stringify(cards));
+  localStorage.setItem("userCards", JSON.stringify(cards));
 }
 
 function showUserCards(cards) {
   userCardList.innerHTML = '';
-	cards.forEach(card => {
-		const cardClone = userCardTemplate.content.cloneNode(true);
-		cardClone.querySelector(".id").textContent = card.id;
-		cardClone.querySelector(".name").textContent = card.name;
-		cardClone.querySelector(".surname").textContent = card.surname;
-		cardClone.querySelector(".email").textContent = card.email;
-		cardClone.querySelector(".age").textContent = card.age;
+  cards.forEach(card => {
+    const cardClone = userCardTemplate.content.cloneNode(true);
+    cardClone.querySelector(".id").textContent = card.id;
+    cardClone.querySelector(".name").textContent = card.name;
+    cardClone.querySelector(".surname").textContent = card.surname;
+    cardClone.querySelector(".email").textContent = card.email;
+    cardClone.querySelector(".age").textContent = card.age;
 
     const deleteBtn = cardClone.querySelector(".close-btn");
     deleteBtn.dataset.id = card.id;
 
-		userCardList.appendChild(cardClone);
-	})
+    userCardList.appendChild(cardClone);
+  })
 }
 
 function deleteCard(cardId) {
@@ -83,32 +82,32 @@ function deleteCard(cardId) {
 
 async function loadAllCards() {
   try {
-		userCards = await fetchUsers();
-		
-		if (userCards && Array.isArray(userCards)) {
-			showStatusMessage(DATA_LOADED);
-			setTimeout(async () => {
-				await fillLocalStorageByUsers(userCards);
+    userCards = await fetchUsers();
+  
+    if (userCards && Array.isArray(userCards)) {
+      showStatusMessage(DATA_LOADED);
+      setTimeout(async () => {
+        await fillLocalStorageByUsers(userCards);
         userCardList.innerHTML = '';
-				modal.classList.remove("modal-showed");
-				showUserCards(userCards);
-			},800)
-			
-		} else {
-			console.error('userCards: ', userCards);
-		}
-	} catch (error) {
-		console.log("Ошибка загрузки карточек: ", error);
-	}
+        modal.classList.remove("modal-showed");
+        showUserCards(userCards);
+      }, 800)
+    
+    } else {
+      console.error('userCards: ', userCards);
+    }
+  } catch (error) {
+    console.log("Ошибка загрузки карточек: ", error);
+  }
 }
 
 loadAllCardsBtn.addEventListener('click', loadAllCards);
 
 function handleDeleteAllCards() {
   userCardList.innerHTML = '';
-	localStorage.removeItem("userCards");
-	userCards = [];
-	showStatusMessage(DATA_EMPTY);
+  localStorage.removeItem("userCards");
+  userCards = [];
+  showStatusMessage(DATA_EMPTY);
 }
 
 delAllCardsBtn.addEventListener('click', handleDeleteAllCards);
